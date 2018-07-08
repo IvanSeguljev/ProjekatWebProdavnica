@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" >
     <a class="navbar-brand" href="/"><img src="{{ asset('Slike/mKralj.png') }}" alt="" style="width: 100px; height: 40px"/></a>
     
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">

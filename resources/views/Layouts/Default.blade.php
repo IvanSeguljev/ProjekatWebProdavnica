@@ -3,20 +3,20 @@
 <head>
     @include('Includes.head')
 </head>
-<body>
+<body style="padding-top: 120px;">
+    @include('includes.header')
 <div class="container">
 
-    <header class="row">
-        @include('includes.header')
-    </header>
-
-    <div id="main" class="row">
+    
+    
+    
+        <div id="main" class="row">
 
             @yield('content')
 
     </div>
 
-    <footer class="row">
+    <footer class="row" style="padding-top: 100px;">
         @include('includes.footer')
     </footer>
 
