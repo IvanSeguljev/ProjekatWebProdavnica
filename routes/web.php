@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomeController@Pocetna');
+Route::get('/ONama','HomeController@ONama');

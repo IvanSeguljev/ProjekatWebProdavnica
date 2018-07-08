@@ -8,6 +8,10 @@ class HomeController extends Controller
 {
     public function Pocetna()
     {
-        return view("Index");
+        return view("Pocetne.Index");
+    }
+    public function ONama()
+    {
+        return view("Pocetne.ONama");
     }
 }
