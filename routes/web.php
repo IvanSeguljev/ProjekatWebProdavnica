@@ -21,3 +21,7 @@ Auth::routes();
 //administracija routes
 Route::get('/Administracija/Korisnici', 'AdministracijaController@ListaKorisnika');
 Route::post('/Administracija/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
+
+//Korisnik routes
+Route::get('/Korisnik/NalogKorisnika', ['uses'=>'KorisnikController@NalogKorisnika','as'=>'NalogKorisnika']);
+Route::post('/Korisnik/ObrisiNalog', ['uses'=>'KorisnikController@ObrisiNalog','as'=>'ObrisiNalog']);
