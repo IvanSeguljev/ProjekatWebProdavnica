@@ -1,0 +1,34 @@
+.dataTables_wrapper{
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+}
+label{
+    color: white;
+}
+.dataTables_info{
+    color: white !important;
+}
+th{
+    background-color: darkgrey;
+    border-right: 1px solid white;
+}
+td{
+    background-color: #999999 !important;
+    border-top: none;
+    border-right: 1px solid white;
+   
+}
+#tabela_previous{
+    background-color: white !important;
+}
+#tabela_next{
+    background-color: white !important;
+}
+table{
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+}
+input{
+    border-radius: 7px;
+}
