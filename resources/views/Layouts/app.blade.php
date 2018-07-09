@@ -47,7 +47,7 @@
           Administracija
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Administracija Korisnika</a>          
+          <a class="dropdown-item" href="/Administracija/Korisnici">Administracija Korisnika</a>          
           <a class="dropdown-item" href="#">Administracija Robe</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Obrada Reklamacija</a>

@@ -8,9 +8,12 @@
                 <p class="lead">Dobro dosli u web prodavnicu Mili Kralj(mK)</p>
                 <hr class="my-4">
                 <p>mK se vec nekoliko meseci bavi internet prodajom elektronskih komponenti. Ako zelite da kupite komponente ili da pogledate nas asortiman, 
-                ulogujte se, ako nemate nalog, napravite ga, brzo je, jednostavno i besplatno. Ako zelite da saznate vise o nama, kliknite na dugme ispod</p>
+                ulogujte se, ako zelite da saznate vise o nama, kliknite na dugme O nama</p>
                 <p class="lead">
                     <a class="btn btn-primary btn-lg" href="/ONama" role="button">O nama</a>
+                    <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+                <p>Ako nemate nalog, napravite ga, brzo je, jednostavno i besplatno.</p>
+                    <a class="btn btn-primary btn-lg" href="/register" role="button">Napravi novi nalog</a>
                  </p>
             </div>
         </div>

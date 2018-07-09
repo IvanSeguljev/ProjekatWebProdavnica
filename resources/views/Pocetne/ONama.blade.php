@@ -9,6 +9,8 @@
         Mi smo cvrsto uvereni da je od profita mnogo bitnije poverenje koje se gradi na uspesnoj saradnji sa nasim cenjenim klijentima</p>
         
     </div>
-    
+    <div>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Povratak na pocetnu</a>
+    </div>
 </body>
 @endsection

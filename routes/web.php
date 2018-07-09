@@ -10,9 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//home routes
 Route::get('/', 'HomeController@Pocetna');
 Route::get('/ONama','HomeController@ONama');
+Route::get('/home', 'HomeController@Pocetna')->name('home');
+
+//auth routes
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//administracija routes
+Route::get('/Administracija/Korisnici', 'AdministracijaController@ListaKorisnika');

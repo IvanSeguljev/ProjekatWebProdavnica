@@ -11,9 +11,11 @@ class HomeController extends Controller
      *
      * @return void
      */
+    
     public function __construct()
     {
-        $this->middleware('auth');
+        
+        $this->middleware('auth',['except'=>['Pocetna','ONama']]);
     }
 
     /**
@@ -24,5 +26,9 @@ class HomeController extends Controller
     public function Pocetna()
     {
         return view('Pocetne.Index');
+    }
+    public function ONama()
+    {
+        return view('Pocetne.ONama');
     }
 }
