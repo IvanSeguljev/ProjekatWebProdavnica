@@ -21,7 +21,11 @@
             <td>{{$user->email}}</td>
             <td>{{$user->role}}</td>
             <td>{{$user->stanjeNaRacunu}}</td>
-            <td>Row 1 Data 1</td>
+            <td><form method="post" action="{{ action('AdministracijaController@BrisanjeKorisnika') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$user->id}}" name="id"/>
+                    <button style="width: 100%" type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')">Obrisi korisnika</button>
+                </form></td>
         </tr>
         @endforeach
         

@@ -12,4 +12,12 @@ class AdministracijaController extends Controller
         $users = User::all();
         return view("Administracija.Lista")->with('users',$users);
     }
+    
+    public function BrisanjeKorisnika(Request $req)
+    {
+        $nes = $req->id;
+        User::destroy([$nes]);
+        return redirect('/Administracija/Korisnici');
+    }
+    
 }
