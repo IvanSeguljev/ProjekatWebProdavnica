@@ -13,3 +13,6 @@
 
 Route::get('/', 'HomeController@Pocetna');
 Route::get('/ONama','HomeController@ONama');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

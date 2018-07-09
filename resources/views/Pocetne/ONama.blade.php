@@ -1,5 +1,5 @@
 <!doctype html>
-@extends('layouts.Default')
+@extends('layouts.app')
 @section('content')
 <body>
     
