@@ -3,7 +3,7 @@
 @section('content')
 <body>
     <div class="row">
-        <div class="col-md-2"></div>
+        
     <div class="col-md-8">
         <h1>Nalog korisnika {{$user->name}}</h1>
         <hr/>
@@ -18,21 +18,30 @@
         
         
         </div>
-        <div class="col-md-2"></div>
+        
     </div>
     <br>
     <br>
     <br>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <h4>Transakcije</h4>
+    <hr style="background-color: white"/>
+    
+        
+        
+        <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
              <div class="card-header">Header</div>
              <div class="card-body">
                 <h4 class="card-title">Primary card title</h4>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
-        <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+        </div>
+    <h4 style="padding-top: 20px;">Nalog</h4>
+            <hr style="background-color: white"/>
+        
+        <div class="col-md-4">
+        <div class="card text-white bg-danger mb-3  " style="max-width: 20rem;">
             <div class="card-header">Obrisi nalog</div>
             <div class="card-body">
                 <h4 class="card-title">Obrisi korisnicki nalog</h4>
@@ -44,6 +53,7 @@
                 </form>
             </div>
         </div>
-    </div>
+        </div>
+   
 </body>
 @endsection

@@ -17,7 +17,7 @@
                  </p>
             </div>
         </div>
-        <div id="demo" class="carousel slide" data-ride="carousel">
+<div id="demo" class="carousel slide" data-ride="carousel">
 <div class="col-md-12">
   <!-- Indicators -->
   <ul class="carousel-indicators">
