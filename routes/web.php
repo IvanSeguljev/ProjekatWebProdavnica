@@ -25,3 +25,4 @@ Route::post('/Administracija/BrisanjeKorisnika', ['uses'=>'AdministracijaControl
 //Korisnik routes
 Route::get('/Korisnik/NalogKorisnika', ['uses'=>'KorisnikController@NalogKorisnika','as'=>'NalogKorisnika']);
 Route::post('/Korisnik/ObrisiNalog', ['uses'=>'KorisnikController@ObrisiNalog','as'=>'ObrisiNalog']);
+Route::post('/Korisnik/DoplatiNovac', ['uses'=>'KorisnikController@DoplatiNovac','as'=>'DoplatiNovac']);

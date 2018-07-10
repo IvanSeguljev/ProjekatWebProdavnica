@@ -30,10 +30,15 @@
         
         <div class="col-md-4">
         <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
-             <div class="card-header">Header</div>
+             <div class="card-header">Dodaj novac na racun</div>
              <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4 class="card-title">Dodaj novac</h4>
+                <p class="card-text">Kliknite na dugme ispod da biste doplatili novac na vas racun</p>
+                <hr>
+                
+                <input type="submit" class="btn btn-success" value="Doplati" data-toggle="modal" data-target="#myModal"/>
+                
+                
             </div>
         </div>
         </div>
@@ -55,5 +60,58 @@
         </div>
         </div>
    
+            
+            
+            
+            <--modalna-->
+            <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Doplati novac na racun</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        
+        
+      <div class="modal-body">       
+        <form method="post" action="{{route('DoplatiNovac')}}">
+        {{ csrf_field() }}
+        <div class="form-group" style="width:100%;">
+            <input id="iznos" type="text" placeholder="Unesite iznos za doplatu" name="iznos" style="width: 100%">
+            <br>
+            <div id="alert" class="alert alert-dismissible alert-danger" hidden="">             
+                
+                <strong>Mozete uneti samo brojeve, sa opcionim decimalnim zarezom(123 ili 123.45)</strong>
+            </div>
+        </div>
+        <input type="submit" value="Doplati" class="btn btn-success" name="dugme" onclick="return Proveri()"/>
+    </form>
+      </div>
+        
+        
+      
+        </div>
+        </div>
+        </div>
+            
+             <script>
+        function Proveri()
+        {
+            var regex = /^[0-9]+(\.[0-9]+)?$/;
+            var iznos = document.getElementById("iznos").value;
+            if(regex.test(iznos))
+            {
+                return true;
+            }
+            else
+            {
+                document.getElementById('alert').removeAttribute('hidden');
+                return false;
+            }
+        }
+    </script>
 </body>
 @endsection
