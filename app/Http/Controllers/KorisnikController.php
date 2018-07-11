@@ -11,8 +11,12 @@ class KorisnikController extends Controller
 {
     public function NalogKorisnika()
     {
-        $user = Auth::user();
-        return view('Korisnik.NalogKorisnika')->with('user',$user);
+        $user = User::Find(Auth::user()->id);
+        $trans = $user->Transakcije;
+        
+        $data = ['user' => $user,'Transakcije' => $trans];
+        
+        return view('Korisnik.NalogKorisnika')->with('data',$data);;
     }
       public function ObrisiNalog()
     {

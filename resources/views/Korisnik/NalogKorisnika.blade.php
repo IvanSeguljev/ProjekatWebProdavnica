@@ -5,7 +5,7 @@
     <div class="row">
         
     <div class="col-md-8">
-        <h1>Nalog korisnika {{$user->name}}</h1>
+        <h1>Nalog korisnika {{$data['user']->name}}</h1>
         <hr/>
     </div>
     </div>
@@ -13,8 +13,8 @@
         <div class="col-md-2"></div>
     <div class=" col-md-8">
         
-        <p class="lead">email: {{$user->email}}</p>
-        <p class="lead">Stanje na vasem racunu: {{$user->stanjeNaRacunu}}.din</p>
+        <p class="lead">email: {{$data['user']->email}}</p>
+        <p class="lead">Stanje na vasem racunu: {{$data['user']->stanjeNaRacunu}}.din</p>
         
         
         </div>
@@ -25,8 +25,25 @@
     <br>
     <h4>Transakcije</h4>
     <hr style="background-color: white"/>
-    
-        
+     <div class="col-md-12">
+       <table id="tabela" class="display">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Komentar</th>
+            <th>Iznos</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($data['Transakcije'] as $transakcija)
+        <tr>
+            <td>{{$transakcija->created_at}}</td><td>{{$transakcija->komentar}}</td><td>{{$transakcija->iznos}}</td>
+         </tr>
+        @endforeach
+    </tbody>
+    </table>
+    </div>
+    <br>
         
         <div class="col-md-4">
         <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
@@ -63,7 +80,7 @@
             
             
             
-            <--modalna-->
+            <!--modalna-->
             <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -96,7 +113,13 @@
         </div>
         </div>
         </div>
-            
+            <script type="text/javascript" src="{{asset("js/datatables.min.js")}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset("css/datatables.min.css")}}"/> 
+    <link rel="stylesheet" type="text/css" href="{{asset("css/datatablesSredjivanje.css")}}"/> 
+    <script>$(document).ready(function () {
+    $.noConflict();
+    var table = $('#tabela').DataTable();
+});</script>
              <script>
         function Proveri()
         {
