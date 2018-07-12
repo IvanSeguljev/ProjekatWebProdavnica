@@ -3,6 +3,7 @@
 @section('content')
 
 <br>
+
 <div class="card">
                 <div class="card-header">{{ __('Promena sifre') }}</div>
                 <div class="card-body">
@@ -45,6 +46,9 @@
     <div class="col-md-8 offset-md-4">
         <button type="submit" class="btn btn-primary" >Promeni sifru</button>
     </div>
+    @foreach ($errors->all() as $error)
+    <li style="color: red;">{{ $error }}</li>
+            @endforeach
 </form>
                 </div>
 </div>
