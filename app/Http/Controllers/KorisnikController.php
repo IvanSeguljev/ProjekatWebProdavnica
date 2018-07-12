@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Transakcija;
+use Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Rules\ValidatePassword;
 
 class KorisnikController extends Controller
 {
@@ -38,5 +41,34 @@ class KorisnikController extends Controller
         $user->stanjeNaRacunu += $iznos;
         $user->save();
         return redirect('/Korisnik/NalogKorisnika');
+    }
+    public function PromeniSifru()
+    {
+        return view('Korisnik.PromeniSifru');
+    }
+    
+    
+   
+    
+    public function PromenaSifre(Request $data)
+    {
+         $validator = Validator::make($data->all(), [
+            'stariPass' =>['required', new ValidatePassword(Auth::User())],
+            'password' => 'required|string|min:6|confirmed',
+            
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('Korisnik/PromeniSifru')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        else
+        {
+            $user = User::Find(Auth::User()->id);
+            $user->password = Hash::make($data['password']);
+            $user->save();
+            return redirect('/Korisnik/NalogKorisnika');
+        }
     }
 }

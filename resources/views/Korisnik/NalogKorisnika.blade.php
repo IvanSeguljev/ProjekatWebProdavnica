@@ -61,7 +61,7 @@
         </div>
     <h4 style="padding-top: 20px;">Nalog</h4>
             <hr style="background-color: white"/>
-        
+      <div class="row">
         <div class="col-md-4">
         <div class="card text-white bg-danger mb-3  " style="max-width: 20rem;">
             <div class="card-header">Obrisi nalog</div>
@@ -76,6 +76,21 @@
             </div>
         </div>
         </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Promeni sifru</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Promeni sifru</h4>
+                        <p class="card-text">Kliknite na dugme ispod kako bi ste promenili sifru</p>
+                         <hr>
+                <form method="get" action="{{route('PromeniSifru')}}">
+                
+                <input type="submit" class="btn btn-danger" value="Promeni sifru"/>
+                </form>
+                    </div>
+                </div>
+            </div>
+         </div>
    
             
             
