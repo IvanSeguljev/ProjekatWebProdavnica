@@ -22,6 +22,14 @@ Auth::routes();
 Route::get('/Administracija/Korisnici', 'AdministracijaController@ListaKorisnika');
 Route::post('/Administracija/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
 Route::get('/Administracija/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
+Route::get('/Administracija/Roba', ['uses'=>'AdministracijaController@AdministracijaRobe','as'=>'AdministracijaRobe']);
+//administracija/kategorija routes
+Route::get('/Administracija/DodajKategoriju', ['uses'=>'AdministracijaController@DodajKategoriju','as'=>'DodajKategoriju']);
+Route::post('/Administracija/BrisanjeKategorije', ['uses'=>'AdministracijaController@BrisanjeKategorije','as' => 'BrisanjeKategorije']);
+Route::post('/Administracija/DodavanjeKategorije', ['uses'=>'AdministracijaController@DodavanjeKategorije','as' => 'DodavanjeKategorije']);
+Route::get('/Administracija/IzmeniKategoriju', ['uses'=>'AdministracijaController@IzmeniKategoriju','as'=>'IzmeniKategoriju']);
+Route::post('/Administracija/IzmenaKategorije', ['uses'=>'AdministracijaController@IzmenaKategorije','as' => 'IzmenaKategorije']);
+
 
 //Korisnik routes
 Route::get('/Korisnik/NalogKorisnika', ['uses'=>'KorisnikController@NalogKorisnika','as'=>'NalogKorisnika']);
