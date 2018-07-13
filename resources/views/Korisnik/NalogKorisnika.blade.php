@@ -14,7 +14,7 @@
     <div class=" col-md-8">
         
         <p class="lead">email: {{$data['user']->email}}</p>
-        <p class="lead">Stanje na vasem racunu: {{$data['user']->stanjeNaRacunu}}.din</p>
+        <p class="lead">Stanje na racunu: {{$data['user']->stanjeNaRacunu}}.din</p>
         
         
         </div>

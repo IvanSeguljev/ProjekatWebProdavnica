@@ -19,5 +19,13 @@ class AdministracijaController extends Controller
         User::destroy([$nes]);
         return redirect('/Administracija/Korisnici');
     }
+    public function NalogKorisnika(Request $req)
+    {
+        $user = User::Find($req->id);
+        $trans = $user->Transakcije;
+        $data = ['user' => $user,'Transakcije' => $trans];
+        
+        return view('Korisnik.NalogKorisnika')->with('data',$data);
+    }
     
 }

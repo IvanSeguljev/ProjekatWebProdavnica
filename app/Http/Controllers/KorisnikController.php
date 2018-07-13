@@ -19,7 +19,7 @@ class KorisnikController extends Controller
         
         $data = ['user' => $user,'Transakcije' => $trans];
         
-        return view('Korisnik.NalogKorisnika')->with('data',$data);;
+        return view('Korisnik.NalogKorisnika')->with('data',$data);
     }
       public function ObrisiNalog()
     {
