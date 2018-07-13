@@ -25,4 +25,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Transakcija');
     }
+    public function Korpe()
+    {
+        return $this->hasMany('App\Korpa');
+    }
+    public function Racuni()
+    {
+        return $this->hasMany('App\Racun');
+    }
 }
