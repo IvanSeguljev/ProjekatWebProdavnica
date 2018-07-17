@@ -7,6 +7,7 @@ use App\Kategorija;
 use App\Proizvod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AdministracijaController extends Controller
 {
@@ -85,24 +86,55 @@ class AdministracijaController extends Controller
     }
     public function DodavanjeProizvoda(Request $req)
     {
-        $tmp = file_get_contents($req->slika);
-        $blob = base64_encode($tmp);
+        $photoName = time().'.'.$req->slika->getClientOriginalExtension();
+        $req->slika->move(public_path('SlikeProizvoda'), $photoName);
         $proizvod = new Proizvod();
         $proizvod->naziv = $req->naziv;
         $proizvod->opis = $req->opis;
         $proizvod->kategorija_id = $req->kategorija;
-        $proizvod->slika = $blob;
+        $proizvod->slika = $photoName;
         $proizvod->kolicina = $req->broj;
         $proizvod->cenaPoKomadu = $req->cena;
         $proizvod->save();
         
         
-         return redirect('/Administracija/Roba');
+         return redirect('Administracija/Roba');
     }
     public function ObrisiProizvod(Request $req)
     {
+        $proizvod = Proizvod::Find($req->id);
+        Storage::delete($proizvod->slika);
+        
         Proizvod::destroy([$req->id]);
         
+        return redirect('/Administracija/Roba');
+    }
+    public function IzmenaProizvoda(Request $req)
+    {
+        $kategorije = Kategorija::all();
+        $proizvod = Proizvod::Find($req->id);
+        
+        return view('Administracija.IzmenaProizvoda')->with('proizvod',$proizvod)->with('kategorije',$kategorije);
+    }
+    public function IzmeniProizvod(Request $req)
+    {
+      
+        
+        $proizvod = Proizvod::Find($req->id);
+        
+          if($req->slika)
+        {
+             Storage::delete($proizvod->slika);
+             $photoName = time().'.'.$req->slika->getClientOriginalExtension();
+             $req->slika->move(public_path('SlikeProizvoda'), $photoName);
+             $proizvod->slika = $photoName;
+        }
+        
+        $proizvod->naziv = $req->naziv;
+        $proizvod->opis = $req->opis;
+        $proizvod->kategorija_id = $req->kategorija;       
+        
+        $proizvod->save();
         return redirect('/Administracija/Roba');
     }
 }

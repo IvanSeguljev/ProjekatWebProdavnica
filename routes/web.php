@@ -33,6 +33,8 @@ Route::post('/Administracija/IzmenaKategorije', ['uses'=>'AdministracijaControll
 Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
 Route::post('/Administracija/ObrisiProizvod', 'AdministracijaController@ObrisiProizvod');
+Route::get('/Administracija/IzmeniProizvod', 'AdministracijaController@IzmenaProizvoda');
+Route::post('/Administracija/IzmeniProizvod', 'AdministracijaController@IzmeniProizvod');
 
 
 

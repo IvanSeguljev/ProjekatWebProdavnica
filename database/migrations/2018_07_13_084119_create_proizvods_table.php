@@ -15,7 +15,7 @@ class CreateProizvodsTable extends Migration
     {
         Schema::create('proizvods', function (Blueprint $table) {
             $table->increments('id');
-            $table->binary('slika');
+            $table->string('slika');
             $table->string('naziv');
             $table->string('opis');
             $table->integer('kategorija_id');
