@@ -32,3 +32,6 @@ table{
 input{
     border-radius: 7px;
 }
+ #tabela_previous {
+    background-color: white !important;
+}

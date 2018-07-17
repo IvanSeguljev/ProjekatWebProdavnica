@@ -6,12 +6,13 @@ use App\User;
 use App\Kategorija;
 use App\Proizvod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdministracijaController extends Controller
 {
     public function ListaKorisnika()
     {
-        $users = User::all();
+        $users = User::all()->except(Auth::user()->id);
         return view("Administracija.Lista")->with('users',$users);
     }
     
@@ -34,7 +35,9 @@ class AdministracijaController extends Controller
     public function AdministracijaRobe()
     {
         $kategorije = Kategorija::all();
-        $data = ['kategorije'=>$kategorije];
+        $proizvodi = Proizvod::get(['id','naziv','opis','kategorija_id','cenaPoKomadu','kolicina']);
+        $data = ['kategorije'=>$kategorije,'proizvodi'=>$proizvodi];
+        
         return view('Administracija.AdministracijaRobe')->with('data',$data);
     }
     
@@ -72,5 +75,34 @@ class AdministracijaController extends Controller
          $kategorija->naziv = $req->naziv;
          $kategorija->save();
          return redirect('/Administracija/Roba');
+    }
+    
+    public function DodajProizvod()
+    {
+        $kategorije = Kategorija::all();
+        $data = ['kategorije' => $kategorije];
+        return view('Administracija.DodavanjeProizvoda')->with('data',$data);
+    }
+    public function DodavanjeProizvoda(Request $req)
+    {
+        $tmp = file_get_contents($req->slika);
+        $blob = base64_encode($tmp);
+        $proizvod = new Proizvod();
+        $proizvod->naziv = $req->naziv;
+        $proizvod->opis = $req->opis;
+        $proizvod->kategorija_id = $req->kategorija;
+        $proizvod->slika = $blob;
+        $proizvod->kolicina = $req->broj;
+        $proizvod->cenaPoKomadu = $req->cena;
+        $proizvod->save();
+        
+        
+         return redirect('/Administracija/Roba');
+    }
+    public function ObrisiProizvod(Request $req)
+    {
+        Proizvod::destroy([$req->id]);
+        
+        return redirect('/Administracija/Roba');
     }
 }

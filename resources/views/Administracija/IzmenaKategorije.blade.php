@@ -23,7 +23,7 @@
                             <a href="/Administracija/Roba" ><button type="button" class="btn btn-danger form-control">Otkazi dodavanje</button></a>
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" class="btn btn-success form-control" onclick="return proveri();" value="Dodaj kategoriju"/>
+                                <input type="submit" class="btn btn-success form-control" onclick="return proveri();" value="Izmeni kategoriju"/>
                             </div>
                         </div>
                     </form>

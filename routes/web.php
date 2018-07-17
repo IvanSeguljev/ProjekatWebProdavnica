@@ -29,6 +29,11 @@ Route::post('/Administracija/BrisanjeKategorije', ['uses'=>'AdministracijaContro
 Route::post('/Administracija/DodavanjeKategorije', ['uses'=>'AdministracijaController@DodavanjeKategorije','as' => 'DodavanjeKategorije']);
 Route::get('/Administracija/IzmeniKategoriju', ['uses'=>'AdministracijaController@IzmeniKategoriju','as'=>'IzmeniKategoriju']);
 Route::post('/Administracija/IzmenaKategorije', ['uses'=>'AdministracijaController@IzmenaKategorije','as' => 'IzmenaKategorije']);
+//administracija/proizvod routes
+Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
+Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
+Route::post('/Administracija/ObrisiProizvod', 'AdministracijaController@ObrisiProizvod');
+
 
 
 //Korisnik routes
