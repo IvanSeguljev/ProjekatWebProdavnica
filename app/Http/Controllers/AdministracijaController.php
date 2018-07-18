@@ -137,4 +137,15 @@ class AdministracijaController extends Controller
         $proizvod->save();
         return redirect('/Administracija/Roba');
     }
+    public function DodajNaStanje(Request $req)
+    {
+        return view('Administracija.DodajNaStanje')->with('id',$req->id);
+    }
+    public function DodavanjeNaStanje(Request $req)
+    {
+        $proizvod = Proizvod::Find($req->id);
+        $proizvod->kolicina += $req->kolicina;
+        $proizvod->save();
+        return redirect('/Administracija/Roba');
+    }
 }

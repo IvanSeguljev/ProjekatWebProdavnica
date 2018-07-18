@@ -67,6 +67,7 @@
             </thead>
             <tbody>
                 @foreach($data['proizvodi'] as $proizvod)
+                <tr>
             <td>{{$proizvod->naziv}}</td>
             <td>{{$proizvod->opis}}</td>
                 @foreach($data['kategorije'] as $kategorija)
@@ -81,28 +82,36 @@
                 <div class="row">
                <form method="post" action="/Administracija/ObrisiProizvod">
                     {{ csrf_field() }}
-                    <div  style="padding: 10%;">
+                    <div  >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit" onclick="return confirm('Da li ste sigurni da zelite da obrisete?')"><img width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
+                     <button style="background-color: transparent;border: none;" type="submit" onclick="return confirm('Da li ste sigurni da zelite da obrisete?')"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
                     </div>
                </form>
                 <form method="get" action="/Administracija/IzmeniProizvod">
                     
-                    <div style="padding: 10%;">
+                    <div >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit"><img width="30px" height="30px"  src="{{asset('ikonice/Edit.png')}}"/></button>
+                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Edit.png')}}"/></button>
                     </div>
                 </form>
                     <form method="get" action="/Administracija/PrikaziProizvod">
                     
-                    <div style="padding: 10%;">
+                    <div >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit"><img width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
+                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
+                    </div>
+                </form>
+                    <form method="get" action="/Administracija/DodajNaStanje">
+                    
+                    <div >
+                     <input  type="hidden" value="{{$proizvod->id}}" name="id"/>
+                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Add.png')}}"/></button>
                     </div>
                 </form>
                     </div>
                 
             </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
