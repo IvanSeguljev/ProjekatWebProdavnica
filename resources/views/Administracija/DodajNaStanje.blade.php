@@ -17,7 +17,7 @@
                             <a href="/Administracija/Roba" ><button type="button" class="btn btn-danger form-control">Otkazi dodavanje</button></a>
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" class="btn btn-success form-control"  value="Dodaj na stanje"/>
+                                <input type="submit" class="btn btn-success form-control"  value="Dodaj na stanje" onclick="return confirm('Jeste li sigurni da zelite da dodate na stanje ovog proizvoda?')"/>
                             </div>
                         </div>
                     </form>
