@@ -148,4 +148,9 @@ class AdministracijaController extends Controller
         $proizvod->save();
         return redirect('/Administracija/Roba');
     }
+    public function PrikaziProizvod(Request $req)
+    {
+        $proizvod = Proizvod::Find($req->id);
+        return view('Administracija.PrikaziProizvod')->with('proizvod',$proizvod);
+    }
 }

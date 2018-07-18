@@ -37,6 +37,7 @@ Route::get('/Administracija/IzmeniProizvod', 'AdministracijaController@IzmenaPro
 Route::post('/Administracija/IzmeniProizvod', 'AdministracijaController@IzmeniProizvod');
 Route::get('/Administracija/DodajNaStanje', 'AdministracijaController@DodajNaStanje');
 Route::post('/Administracija/DodajNaStanje', 'AdministracijaController@DodavanjeNaStanje');
+Route::get('/Administracija/PrikaziProizvod', 'AdministracijaController@PrikaziProizvod');
 
 
 //Korisnik routes

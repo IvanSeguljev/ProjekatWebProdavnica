@@ -84,28 +84,28 @@
                     {{ csrf_field() }}
                     <div  >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit" onclick="return confirm('Da li ste sigurni da zelite da obrisete?')"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
+                     <button  data-toggle="tooltip" title="Obrisi proizvod" data-placement="top" style="background-color: transparent;border: none;" type="submit" onclick="return confirm('Da li ste sigurni da zelite da obrisete?')"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
                     </div>
                </form>
                 <form method="get" action="/Administracija/IzmeniProizvod">
                     
                     <div >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Edit.png')}}"/></button>
+                     <button data-toggle="tooltip" title="Izmeni proizvod" data-placement="top" style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Edit.png')}}"/></button>
                     </div>
                 </form>
                     <form method="get" action="/Administracija/PrikaziProizvod">
                     
                     <div >
                      <input type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
+                     <button data-toggle="tooltip" title="Prikazi karticu" data-placement="top" style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
                     </div>
                 </form>
                     <form method="get" action="/Administracija/DodajNaStanje">
                     
                     <div >
                      <input  type="hidden" value="{{$proizvod->id}}" name="id"/>
-                     <button style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Add.png')}}"/></button>
+                     <button data-toggle="tooltip" title="Dodaj na stanje" data-placement="top" style="background-color: transparent;border: none;" type="submit"><img style="padding: 10%;" width="30px" height="30px"  src="{{asset('ikonice/Add.png')}}"/></button>
                     </div>
                 </form>
                     </div>
@@ -125,11 +125,15 @@
      <script type="text/javascript" src="{{asset("js/datatables.min.js")}}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset("css/datatables.min.css")}}"/> 
     <link rel="stylesheet" type="text/css" href="{{asset("css/datatablesSredjivanje.css")}}"/> 
+    
     <script>$(document).ready(function () {
     $.noConflict();
     var table1 = $('#tabelaProizvodi').DataTable();
     var table2 = $('#tabelaKategorija').DataTable();
-});</script>
+    
+});
+   
+    </script>
 
 </body>
 @endsection
