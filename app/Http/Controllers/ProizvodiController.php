@@ -8,7 +8,7 @@ class ProizvodiController extends Controller
 {
 public function Prikazi()
 {
-    $proizvodi = Proizvod::all();
-    return view('Proizvod.Prikazi')->with('proizvodi',$proizvodi);
+    
+    return view('Proizvod.Prikazi')->with('proizvodi', Proizvod::paginate(9));
 }
 }

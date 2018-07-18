@@ -22,5 +22,11 @@
         </div>
     @endforeach
    </div>
+    <div class="row">
+        <div class="col-md-12" style="margin-left: 20px;">
+    {{ $proizvodi->links() }}
+    </div>
+    </div>
+    
 </body>
 @endsection
