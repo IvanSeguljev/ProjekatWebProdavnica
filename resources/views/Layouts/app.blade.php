@@ -39,7 +39,7 @@
         <a class="nav-link" href="/">Pocetna <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Proizvodi</a>
+        <a class="nav-link" href="/Proizvodi/prikazi">Proizvodi</a>
       </li>
       
       <li class="nav-item">
