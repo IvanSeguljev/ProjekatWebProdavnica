@@ -69,7 +69,7 @@
                 @foreach($data['proizvodi'] as $proizvod)
                 <tr>
             <td>{{$proizvod->naziv}}</td>
-            <td>{{$proizvod->opis}}</td>
+            <td style="overflow: auto; max-width: 400px;">{{$proizvod->opis}}</td>
                 @foreach($data['kategorije'] as $kategorija)
                     @if($kategorija->id == $proizvod->kategorija_id)
                     <td>{{$kategorija->naziv}}</td>
