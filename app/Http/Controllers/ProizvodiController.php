@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proizvod;
-use Illuminate\Support\Facades\Input;
+
 use App\Kategorija;
 class ProizvodiController extends Controller
 {
@@ -28,6 +28,6 @@ public function Prikazi(Request $req)
         $proizvodi=$proizvodi->where('kolicina','>',0);
     }
     $proizvodi=$proizvodi->paginate(9);
-    return view('Proizvod.Prikazi')->with('proizvodi', $proizvodi)->with('kategorije', Kategorija::all());
+    return \view('Proizvod.Prikazi')->with('proizvodi', $proizvodi)->with('kategorije', Kategorija::all())->with('oldsort',$req);
 }
 }

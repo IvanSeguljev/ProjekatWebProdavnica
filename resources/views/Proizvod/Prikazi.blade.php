@@ -20,29 +20,38 @@
           Pretraga po ceni
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <label>Minimalna cena:</label><input value="{{old('minimalnaCena')}}" type="number" name="minimalnaCena"/>
+            <label>Minimalna cena:</label><input value="{{ $oldsort->minimalnaCena }}" type="number" name="minimalnaCena"/>
          
           <div class="dropdown-divider"></div>
-          <label>Maksimalna cena:</label><input type="number" name="maksimalnaCena"/>
+          <label>Maksimalna cena:</label><input type="number" name="maksimalnaCena" value="{{ $oldsort->maksimalnaCena }}"/>
         </div>
       </li>
       <div style="width:10px;"></div>
       <li class="nav-item">
           <select class="form-control" name="kategorija">
-              <option selected="selected" value="0">Pretraga po kategotiji</option>
+              <option  value="0">Pretraga po kategotiji</option>
                @foreach($kategorije as $kategorija)
+               @if($kategorija->id == $oldsort->kategorija)
+                <option value="{{$kategorija->id}}" selected="selected">{{$kategorija->naziv}}</option>
+               @else
                <option value="{{$kategorija->id}}">{{$kategorija->naziv}}</option>
+               @endif
                @endforeach
       </select>
       </li>
       <div style="width:10px;"></div>
       <li class="nav-item">
           <div >
+          @if($oldsort->samoNaStanju)
+          <input  type="checkbox" name="samoNaStanju" checked=""/>Prikazi samo proizvode na stanju
+          @else
           <input  type="checkbox" name="samoNaStanju"/>Prikazi samo proizvode na stanju
+          @endif
           </div>
       </li>
       <div style="width:10px;"></div>
       <li class="nav-item">
+      
       <button  class="btn btn-secondary navbar-btn" type="submit">Pretrazi</button>
       </li>
     </ul>

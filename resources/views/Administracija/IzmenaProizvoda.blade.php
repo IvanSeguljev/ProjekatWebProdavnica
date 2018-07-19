@@ -21,7 +21,11 @@
                                     <div class="col-md-6"> 
                                         <select class="form-control" id="kategorija" name="kategorija">
                                             @foreach($kategorije as $kategorija)
+                                            @if($kategorija->id == $proizvod->kategorija_id)
+                                            <option value="{{$kategorija->id}}" selected="">{{$kategorija->naziv}}</option>
+                                            @else
                                             <option value="{{$kategorija->id}}">{{$kategorija->naziv}}</option>
+                                            @endif
                                             @endforeach
                                         </select>
                                     </div>
