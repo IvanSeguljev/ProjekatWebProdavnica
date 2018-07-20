@@ -78,7 +78,24 @@
     <li class="list-group-item">Proizvoda u skladistu: <p>{{$proizvod->kolicina}} komada</p></li>
     
   </ul>
+    @if($proizvod->kolicina != 0)
+     <div class="dropdown text-center" style="margin-bottom: 10px;margin-top: 10px;">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <img src="{{asset('ikonice/DodajUKorpu.png')}}" style="margin-right: 5px" width="30px" height="30px"/>Dodaj u korpu
+  </button>
+         <div class="dropdown-menu" style="padding-left:10px; padding-right: 10px;">
+      <form method="post" action="/Korisnik/DodajUKorpu" >
+          <div>{{__("kolicina:")}}</div><input class="form-control" name="kolicina" type="number" max="{{$proizvod->kolicina}}" min="1">
+          <div class="dropdown-divider"></div>
+          <button type="submit" class="btn btn-success text-center" ><img src="{{asset('ikonice/DodajUKorpu.png')}}" style="margin-right:5px;" width="30px" height="30px">Dodaj u korpu</button>
+      </form>
+    
   </div>
+  </div>
+    @endif
+         
+</div>
+
 </div>
         </div>
     @endforeach

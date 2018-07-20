@@ -76,11 +76,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('NalogKorisnika') }}">Korisnicki nalog</a>
+                                    <a class="dropdown-item" href="{{ route('NalogKorisnika') }}"><img src="{{asset('ikonice/User.png')}}" width="25px" height="25px"/>Korisnicki nalog</a>
+                                    <a class="dropdown-item" href="/User/Korpa"><img src="{{asset('ikonice/Korpa.png')}}" width="25px" height="25px"/>Korpa</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <img src="{{asset('ikonice/Logout.png')}}" width="25px" height="25px"/>{{ __('Logout') }}
                                     </a>
                                     
 
