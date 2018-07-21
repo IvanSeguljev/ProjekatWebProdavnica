@@ -44,6 +44,7 @@
     </table>
     </div>
     <br>
+        @if(Auth::user()->id== $data["user"]->id)
         
         <div class="col-md-4">
         <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
@@ -128,6 +129,7 @@
         </div>
         </div>
         </div>
+            @endif
             <script type="text/javascript" src="{{asset("js/datatables.min.js")}}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset("css/datatables.min.css")}}"/> 
     <link rel="stylesheet" type="text/css" href="{{asset("css/datatablesSredjivanje.css")}}"/> 

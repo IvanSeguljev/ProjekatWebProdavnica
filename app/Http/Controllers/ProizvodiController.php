@@ -61,4 +61,22 @@ public function  DodajUKorpu(Request $req)
     $proizvod->save();
     return redirect('/Korisnik/KorpaKorisnika');
 }
+public function ObrisiIzKorpe(Request $req)
+{
+    $celaKorpa = User::Find(Auth::user()->id)->korpe->where("proizvod_id",$req->id);
+    foreach ($celaKorpa as $k)
+    {
+        if($k->proizvod_id == $req->id)
+        {
+            $korpa=$k;
+        }
+    }
+    $proizvod = Proizvod::Find($k->proizvod_id);
+    $proizvod->kolicina += $korpa->kolicina;
+    $proizvod->save();
+    Korpa::destroy([$korpa->id]);
+    return redirect('/Korisnik/KorpaKorisnika');
+    
 }
+}
+

@@ -50,3 +50,4 @@ Route::get('/Korisnik/KorpaKorisnika','KorisnikController@KorpaKorisnika');
 //Proizvodi routes
 Route::get('/Proizvodi/prikazi', 'ProizvodiController@Prikazi');
 Route::post('/Proizvodi/DodajUKorpu', 'ProizvodiController@DodajUKorpu');
+Route::post('/Proizvodi/ObriziIzKorpe', 'ProizvodiController@ObrisiIzKorpe');

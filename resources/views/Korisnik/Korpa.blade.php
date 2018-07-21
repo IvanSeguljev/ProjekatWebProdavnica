@@ -16,17 +16,23 @@
           <span class="badge badge-pill badge-danger" style="position: absolute; width: 40%;left:-5px;top:-5px;">Nema na stanju</span>
           @endif
           <img class="card-img-top" style="height: 150px;" src="{{asset("SlikeProizvoda/".$proizvod->slika)}}" alt="Card image cap">
-          <div class="card-body" style="height: 300px">
+          <div class="card-body" style="height: 350px">
     <h5 class="card-title">{{$proizvod->naziv}}</h5>
     
     <div style="width: 100%;height: 100px;overflow:auto;"  class="scrollbox">{{$proizvod->opis}}</div>
      <ul class="list-group list-group-flush">
      
     <li class="list-group-item">Cena po komadu: {{$proizvod->cenaPoKomadu}} din.</li>
-    <li class="list-group-item">Proizvoda poruceno: <p>{{$proizvod->kolicina}} komada</p></li>
+    <li class="list-group-item">Proizvoda poruceno: <p>{{$proizvod->kolicina}}</p></li>
     
   </ul>
-  
+    <div>
+        <form action="/Proizvodi/ObriziIzKorpe" method="post">
+            {{csrf_field()}}
+            <button type="submit" class="btn btn-danger col-md-12" style="margin-top: 10px;">Obrisi iz korpe</button>
+            <input value="{{$proizvod->id}}" type="hidden" name="id"/>
+        </form>
+    </div>
          
 </div>
 
