@@ -84,7 +84,9 @@
       <img src="{{asset('ikonice/DodajUKorpu.png')}}" style="margin-right: 5px" width="30px" height="30px"/>Dodaj u korpu
   </button>
          <div class="dropdown-menu" style="padding-left:10px; padding-right: 10px;">
-      <form method="post" action="/Korisnik/DodajUKorpu" >
+      <form method="post" action="/Proizvodi/DodajUKorpu" >
+          {{ csrf_field() }}
+          <input type="hidden" value="{{$proizvod->id}}" name="id">
           <div>{{__("kolicina:")}}</div><input class="form-control" name="kolicina" type="number" max="{{$proizvod->kolicina}}" min="1">
           <div class="dropdown-divider"></div>
           <button type="submit" class="btn btn-success text-center" ><img src="{{asset('ikonice/DodajUKorpu.png')}}" style="margin-right:5px;" width="30px" height="30px">Dodaj u korpu</button>

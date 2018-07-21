@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Proizvod;
 use App\Transakcija;
 use Validator;
 use Illuminate\Support\Facades\Hash;
@@ -70,5 +71,24 @@ class KorisnikController extends Controller
             $user->save();
             return redirect('/Korisnik/NalogKorisnika');
         }
+    }
+    public function KorpaKorisnika(Request $req)
+    {
+        $korisnik = Auth::user();
+        $korpa = $korisnik->korpe;
+        $proizvodi = array();
+        $ukupnaCena=0;
+        if($korpa->count()>0)
+        {
+            foreach($korpa as $k)
+            {
+                
+                $proizvod = $k->Proizvod;
+                $proizvod->kolicina = $k->kolicina;
+                $ukupnaCena+=$proizvod->cenaPoKomadu * $proizvod->kolicina;
+                array_push($proizvodi, $proizvod);
+            }
+        }
+        return view('Korisnik.Korpa')->with('proizvodi',$proizvodi)->with('ukupnaCena',$ukupnaCena);
     }
 }

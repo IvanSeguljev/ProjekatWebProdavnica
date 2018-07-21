@@ -14,8 +14,5 @@ class stavkaRacuna extends Model
     {
         return $this->belongsTo('App\Racun');
     }
-    public function Proizvod()
-    {
-        return $this->belongsTo('App\Proizvod');
-    }
+    
 }

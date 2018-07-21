@@ -18,8 +18,5 @@ class Proizvod extends Model
     {
         return $this->hasMany('App\Korpa');
     }
-     public function NaStavkama()
-    {
-        return $this->hasMany('App\stavkaRacuna');
-    }
+    
 }

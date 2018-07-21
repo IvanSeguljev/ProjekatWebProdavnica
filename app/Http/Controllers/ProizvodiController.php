@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proizvod;
+use App\Korpa;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 use App\Kategorija;
 class ProizvodiController extends Controller
@@ -28,6 +31,34 @@ public function Prikazi(Request $req)
         $proizvodi=$proizvodi->where('kolicina','>',0);
     }
     $proizvodi=$proizvodi->paginate(9);
-    return \view('Proizvod.Prikazi')->with('proizvodi', $proizvodi)->with('kategorije', Kategorija::all())->with('oldsort',$req);
+    return view('Proizvod.Prikazi')->with('proizvodi', $proizvodi)->with('kategorije', Kategorija::all())->with('oldsort',$req);
+}
+
+public function  DodajUKorpu(Request $req)
+{
+    
+    $proizvodID = $req->id;
+    $kolicina = $req->kolicina;
+    $postojeci = Korpa::where('user_id', Auth::user()->id);
+    $postojeci = $postojeci->where('proizvod_id',$proizvodID);
+    if($postojeci->count() == 0)
+    {
+        $korpa = new Korpa();
+        $korpa->user_id=Auth::user()->id;
+        $korpa->proizvod_ID = $proizvodID;
+        $korpa->kolicina = $kolicina;
+        
+        $korpa->save();
+    }
+    else 
+    {
+        $korpa = $postojeci->firstOrFail();
+        $korpa->kolicina += $kolicina;
+        $korpa->save();
+    }
+    $proizvod = Proizvod::find($proizvodID);
+    $proizvod->kolicina -= $kolicina;
+    $proizvod->save();
+    return redirect('/Korisnik/KorpaKorisnika');
 }
 }

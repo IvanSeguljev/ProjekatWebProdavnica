@@ -17,7 +17,7 @@ class CreateStavkaRacunasTable extends Migration
             $table->increments('id');
             $table->integer('racun_id');
             $table->double('iznos');
-            $table->integer('proizvod_id');
+            $table->string('nazivProizvoda');
             $table->integer('kolicina');
             $table->timestamps();
         });

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Korpa extends Model
 {
-    protected $table = 'kategorijas';
+    protected $primaryKey = 'id';
+    protected $table = 'korpas';
     public $timestamps = true;
     
      public function User()
