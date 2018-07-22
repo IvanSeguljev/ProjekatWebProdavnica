@@ -64,7 +64,9 @@
     <h1>Vasa korpa je prazna</h1>
     @endif
        </div>
+        @if($proizvodi)
 <div><p>Ukupan iznos za placanje: {{$ukupnaCena}} dinara</p></div>
+@endif
     </div>
 </body>
 @endsection

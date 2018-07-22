@@ -20,7 +20,7 @@
           Pretraga po ceni
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <label>Minimalna cena:</label><input value="{{ $oldsort->minimalnaCena }}" type="number" name="minimalnaCena"/>
+            <label>Minimalna cena:</label><input value="{{ $oldsort->minimalnaCena }}" type="number"  name="minimalnaCena"/>
          
           <div class="dropdown-divider"></div>
           <label>Maksimalna cena:</label><input type="number" name="maksimalnaCena" value="{{ $oldsort->maksimalnaCena }}"/>
@@ -87,7 +87,7 @@
       <form method="post" action="/Proizvodi/DodajUKorpu" >
           {{ csrf_field() }}
           <input type="hidden" value="{{$proizvod->id}}" name="id">
-          <div>{{__("kolicina:")}}</div><input class="form-control" name="kolicina" type="number" max="{{$proizvod->kolicina}}" min="1">
+          <div>{{__("kolicina:")}}</div><input class="form-control" name="kolicina" required="" type="number" max="{{$proizvod->kolicina}}" min="1">
           <div class="dropdown-divider"></div>
           <button type="submit" class="btn btn-success text-center" ><img src="{{asset('ikonice/DodajUKorpu.png')}}" style="margin-right:5px;" width="30px" height="30px">Dodaj u korpu</button>
       </form>
