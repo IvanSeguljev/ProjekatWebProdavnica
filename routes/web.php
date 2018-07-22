@@ -48,6 +48,7 @@ Route::get('/Korisnik/PromeniSifru', ['uses'=>'KorisnikController@PromeniSifru',
 Route::post('/Korisnik/PromenaSifre', ['uses'=>'KorisnikController@PromenaSifre','as'=>'PromenaSifre']);
 Route::get('/Korisnik/KorpaKorisnika','KorisnikController@KorpaKorisnika');
 Route::post('/Korisnik/Kupi','KorisnikController@Kupi');
+Route::post('/Korisnik/Racuni','KorisnikController@Racuni');
 //Proizvodi routes
 Route::get('/Proizvodi/prikazi', 'ProizvodiController@Prikazi');
 Route::post('/Proizvodi/DodajUKorpu', 'ProizvodiController@DodajUKorpu');

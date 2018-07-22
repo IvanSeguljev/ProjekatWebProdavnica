@@ -46,9 +46,25 @@
     </table>
     </div>
     </div>
-    <br>
+    <br><div class="row">
+        <div class="col-md-4">
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+            <div class="card-header">Racuni</div>
+            <div class="card-body">
+            <h4 class="card-title">Moji racuni</h4>
+            <p class="card-text">Kliknite na dugme ispod kako bi ste videli vase prethodne racune i eventualno zatrazili reklamaciju</p>
+            <hr/>
+             <form method="post" action="/Korisnik/Racuni">
+                {{ csrf_field() }}
+                @if(Auth::user()->role == 'Administrator')
+                <input type="hidden" value="{{$data['user']->id}}" name="id"/>
+                @endif
+                <input type="submit" class="btn btn-light" value="Racuni"/>
+                </form>
+            </div>
+        </div>
+</div>
         @if(Auth::user()->id== $data["user"]->id)
-        <div class="row">
         <div class="col-md-4">
         <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
              <div class="card-header">Dodaj novac na racun</div>
@@ -57,13 +73,16 @@
                 <p class="card-text">Kliknite na dugme ispod da biste doplatili novac na vas racun</p>
                 <hr>
                 
-                <input type="submit" class="btn btn-success" value="Doplati" data-toggle="modal" data-target="#myModal"/>
+                <input type="submit" class="btn btn-primary" value="Doplati" data-toggle="modal" data-target="#myModal"/>
                 
                 
             </div>
         </div>
         </div>
+        @endif
         </div>
+        @if(Auth::user()->id== $data["user"]->id)
+        
     <h4 style="padding-top: 20px;">Nalog</h4>
             <hr style="background-color: white"/>
       <div class="row">
@@ -76,7 +95,7 @@
                 <hr>
                 <form method="post" action="{{route('ObrisiNalog')}}">
                 {{ csrf_field() }}
-                <input type="submit" class="btn btn-warning" value="Obrisi nalog" onclick="return confirm('jeste li sigurni da zelite da obrisete svoj nalog?')"/>
+                <input type="submit" class="btn btn-danger" value="Obrisi nalog" onclick="return confirm('jeste li sigurni da zelite da obrisete svoj nalog?')"/>
                 </form>
             </div>
         </div>
@@ -90,7 +109,7 @@
                          <hr>
                 <form method="get" action="{{route('PromeniSifru')}}">
                 
-                <input type="submit" class="btn btn-danger" value="Promeni sifru"/>
+                <input type="submit" class="btn btn-warning" value="Promeni sifru"/>
                 </form>
                     </div>
                 </div>

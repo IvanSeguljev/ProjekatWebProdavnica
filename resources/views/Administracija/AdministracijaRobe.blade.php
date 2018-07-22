@@ -78,7 +78,7 @@
                 @endforeach
             <td>{{$proizvod->kolicina}}</td>
             <td>{{$proizvod->cenaPoKomadu}}</td>
-            <td>
+            <td class="text-center">
                 <div class="row">
                <form method="post" action="/Administracija/ObrisiProizvod">
                     {{ csrf_field() }}

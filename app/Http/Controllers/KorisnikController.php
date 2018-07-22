@@ -146,4 +146,18 @@ class KorisnikController extends Controller
             return redirect()->back()->with('uspeh', true);
         }
     }
+    public function Racuni(Request $req)
+    {
+        if($req->id)
+        {
+            $id = $req->id;
+        }
+        else
+        {
+            $id = Auth::user()->id;
+        }
+        $user = User::find($id);
+        $racuni = $user->Racuni;
+        return view('Korisnik.PrikaziRacune')->with('racuni',$racuni);
+    }
 }
