@@ -68,7 +68,7 @@
           <span class="badge badge-pill badge-danger" style="position: absolute; width: 40%;left:-5px;top:-5px;">Nema na stanju</span>
           @endif
           <img class="card-img-top" style="height: 220px;" src="{{asset("SlikeProizvoda/".$proizvod->slika)}}" alt="Card image cap">
-          <div class="card-body" style="height: 350px">
+          <div class="card-body" style="height: auto">
     <h5 class="card-title">{{$proizvod->naziv}}</h5>
     
     <div style="width: 100%;height: 100px;overflow:auto;"  class="scrollbox">{{$proizvod->opis}}</div>

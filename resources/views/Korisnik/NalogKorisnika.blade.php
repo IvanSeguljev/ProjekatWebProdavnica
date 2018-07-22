@@ -10,7 +10,7 @@
     </div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
+        
     <div class=" col-md-8">
         
         <p class="lead">email: {{$data['user']->email}}</p>
@@ -24,7 +24,9 @@
     <br>
     <br>
     <h4>Transakcije</h4>
+   
     <hr style="background-color: white"/>
+     <div class="row">
      <div class="col-md-12">
        <table id="tabela" class="display">
     <thead>
@@ -43,9 +45,10 @@
     </tbody>
     </table>
     </div>
+    </div>
     <br>
         @if(Auth::user()->id== $data["user"]->id)
-        
+        <div class="row">
         <div class="col-md-4">
         <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
              <div class="card-header">Dodaj novac na racun</div>
@@ -58,6 +61,7 @@
                 
                 
             </div>
+        </div>
         </div>
         </div>
     <h4 style="padding-top: 20px;">Nalog</h4>
