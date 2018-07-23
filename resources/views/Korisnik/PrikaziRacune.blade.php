@@ -22,7 +22,8 @@
         <td>{{$racun->created_at}}</td>
         <td>{{$racun->ukupanIznos}}</td>
         <td class="text-center">
-            <form method="post" action="/Korisnik/Racun/StavkeRacuna">
+            <form method="post" action="/Korisnik/PrikazRacuna">
+                {{csrf_field()}}
                 <input type="hidden" value="{{$racun->id}}" name="id"/>
                 <button type="submit" class="btn btn-primary">Prikazi racun</button>
             </form>

@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/app/User.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Proizvod/Prikazi.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Layouts/app.blade.php</file>
             <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/NalogKorisnika.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/app/Http/Controllers/KorisnikController.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/PrikaziRacune.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Administracija/Lista.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Administracija/AdministracijaRobe.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/Korpa.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/PrikazRacuna.blade.php</file>
         </group>
     </open-files>
 </project-private>

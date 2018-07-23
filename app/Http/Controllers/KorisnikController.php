@@ -160,4 +160,10 @@ class KorisnikController extends Controller
         $racuni = $user->Racuni;
         return view('Korisnik.PrikaziRacune')->with('racuni',$racuni);
     }
+    public function PrikazRacuna(Request $req)
+    {
+        $racun = Racun::Find($req->id);
+        $stavke = $racun->Stavke;
+        return view('Korisnik.PrikazRacuna')->with('racun',$racun)->with('stavke',$stavke);
+    }
 }

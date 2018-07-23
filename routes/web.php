@@ -23,12 +23,14 @@ Route::get('/Administracija/Korisnici', 'AdministracijaController@ListaKorisnika
 Route::post('/Administracija/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
 Route::get('/Administracija/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
 Route::get('/Administracija/Roba', ['uses'=>'AdministracijaController@AdministracijaRobe','as'=>'AdministracijaRobe']);
+
 //administracija/kategorija routes
 Route::get('/Administracija/DodajKategoriju', ['uses'=>'AdministracijaController@DodajKategoriju','as'=>'DodajKategoriju']);
 Route::post('/Administracija/BrisanjeKategorije', ['uses'=>'AdministracijaController@BrisanjeKategorije','as' => 'BrisanjeKategorije']);
 Route::post('/Administracija/DodavanjeKategorije', ['uses'=>'AdministracijaController@DodavanjeKategorije','as' => 'DodavanjeKategorije']);
 Route::get('/Administracija/IzmeniKategoriju', ['uses'=>'AdministracijaController@IzmeniKategoriju','as'=>'IzmeniKategoriju']);
 Route::post('/Administracija/IzmenaKategorije', ['uses'=>'AdministracijaController@IzmenaKategorije','as' => 'IzmenaKategorije']);
+
 //administracija/proizvod routes
 Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
@@ -39,7 +41,6 @@ Route::get('/Administracija/DodajNaStanje', 'AdministracijaController@DodajNaSta
 Route::post('/Administracija/DodajNaStanje', 'AdministracijaController@DodavanjeNaStanje');
 Route::get('/Administracija/PrikaziProizvod', 'AdministracijaController@PrikaziProizvod');
 
-
 //Korisnik routes
 Route::get('/Korisnik/NalogKorisnika', ['uses'=>'KorisnikController@NalogKorisnika','as'=>'NalogKorisnika']);
 Route::post('/Korisnik/ObrisiNalog', ['uses'=>'KorisnikController@ObrisiNalog','as'=>'ObrisiNalog']);
@@ -49,6 +50,8 @@ Route::post('/Korisnik/PromenaSifre', ['uses'=>'KorisnikController@PromenaSifre'
 Route::get('/Korisnik/KorpaKorisnika','KorisnikController@KorpaKorisnika');
 Route::post('/Korisnik/Kupi','KorisnikController@Kupi');
 Route::post('/Korisnik/Racuni','KorisnikController@Racuni');
+Route::post('/Korisnik/PrikazRacuna','KorisnikController@PrikazRacuna');
+
 //Proizvodi routes
 Route::get('/Proizvodi/prikazi', 'ProizvodiController@Prikazi');
 Route::post('/Proizvodi/DodajUKorpu', 'ProizvodiController@DodajUKorpu');
