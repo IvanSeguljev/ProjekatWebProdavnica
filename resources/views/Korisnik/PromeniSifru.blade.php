@@ -43,13 +43,21 @@
                                 @endif
         </div>
     </div>
-    <div class="col-md-8 offset-md-4">
-        <button type="submit" class="btn btn-primary" >Promeni sifru</button>
+    <div class="col-md-3 offset-md-4">
+        <button type="submit" class="btn btn-primary"style="width: 100%;" >Promeni sifru</button>
     </div>
+    
     @foreach ($errors->all() as $error)
     <li style="color: red;">{{ $error }}</li>
             @endforeach
 </form>
-                </div>
+                    <div class="row text-center">
+                        <form action="/Korisnik/NalogKorisnika" method="get" class="col-md-3 offset-md-4" style="margin-top: 30px">
+                  <button type="submit" class="btn btn-danger ">Nazad</button>
+            </form> 
+                    </div>
+                   
+</div>
+               
 </div>
 @endsection

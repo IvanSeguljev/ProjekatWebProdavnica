@@ -1,8 +1,8 @@
 <!doctype html>
 @extends('layouts.app')
 @section('content')
-<body>
-    <div class="card" style=" width: 18rem; display: inline-block; margin: 20px;">
+<div class="text-center">
+    <div class="card col-md-4" style=" width: 18rem; display: inline-block; margin: 20px;">
   <img class="card-img-top" src="{{asset("SlikeProizvoda/".$proizvod->slika)}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{$proizvod->naziv}}</h5>
@@ -18,6 +18,6 @@
 </div>
  
     <br>
-    <a href="/Administracija/Roba" ><button type="button" class="btn btn-danger form-control col-md-3">Povratak na pregled proizvoda</button></a>
-</body>
+    <a href="/Administracija/Roba" ><button type="button" class="btn btn-danger form-control col-md-4">Povratak na pregled proizvoda</button></a>
+</div>
 @endsection

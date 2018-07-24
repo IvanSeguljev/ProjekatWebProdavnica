@@ -26,18 +26,19 @@
             <td>
                 
                 <div class="row">
-                    <div class="col-md-6">
-                <form method="post" action="{{ action('AdministracijaController@BrisanjeKorisnika') }}">
-                    {{ csrf_field() }}
-                    <input type="hidden" value="{{$user->id}}" name="id"/>
-                    <button style="width: 100%" type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')">Obrisi<img style="margin-left: 5%" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
-                </form>
-                    </div>
+                   
                     <div class="col-md-6">
             <form method="get" action="{{ action('AdministracijaController@NalogKorisnika') }}">
                     {{ csrf_field() }}
                     <input type="hidden" value="{{$user->id}}" name="id"/>
                     <button style="width: 100%" type="submit" class="btn btn-primary" >NalogKorisnika<img style="margin-left: 5%" width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
+                </form>
+                    </div>
+                     <div class="col-md-6">
+                <form method="post" action="{{ action('AdministracijaController@BrisanjeKorisnika') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$user->id}}" name="id"/>
+                    <button style="width: 100%" type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')">Obrisi<img style="margin-left: 5%" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
                 </form>
                     </div>
                  </div>
