@@ -37,7 +37,7 @@
             <form method="post" action="/Korisnik/Racuni" class="col-md-3" >
                 {{ csrf_field() }}
                 @if(Auth::user()->role == 'Administrator')
-                <input type="hidden" value="{{$data['user']->id}}" name="id"/>
+                <input type="hidden" value="{{$racun->user_id}}" name="id"/>
                 @endif
                 <button type="submit " class="btn btn-danger"  style="height: 100%; width: 100%">Nazad</button>
                 </form>
