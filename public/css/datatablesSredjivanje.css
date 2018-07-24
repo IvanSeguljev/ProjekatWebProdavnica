@@ -1,5 +1,5 @@
 .dataTables_wrapper{
-    background-color: gray;
+    background-color: #303030;
     padding: 20px;
     border-radius: 10px;
 }
@@ -10,20 +10,19 @@ label{
     color: white !important;
 }
 th{
-    background-color: darkgrey;
-    border-right: 1px solid white;
+    background-color: #3c3c3c;
+    border: 1px solid #525252 !important;
 }
 td{
-    background-color: #999999 !important;
-    border-top: none;
-    border-right: 1px solid white;
+    background-color: #3c3c3c !important;
+   border: 1px solid #444 !important;
    
 }
 #tabela_previous{
-    background-color: white !important;
+    background-color: #3c3c3c; !important;
 }
 #tabela_next{
-    background-color: white !important;
+    background-color: #3c3c3c; !important;
 }
 table{
     margin-top: 40px !important;
@@ -33,5 +32,5 @@ input{
     border-radius: 7px;
 }
  #tabela_previous {
-    background-color: white !important;
+    background-color: #3c3c3c; !important;
 }

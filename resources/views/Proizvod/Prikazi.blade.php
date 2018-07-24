@@ -2,10 +2,10 @@
 @extends('layouts.app')
 
 @section('content')
-<body>
+
    
-        
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100%;     margin-left: 20px;">
+    <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100%; margin-bottom: 20px;">
   <b class="navbar-brand">Pretraga</b>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -50,20 +50,26 @@
           </div>
       </li>
       <div style="width:10px;"></div>
+    
+      
+   
+      <div style="width:10px;"></div>
+      
       <li class="nav-item">
       
       <button  class="btn btn-secondary navbar-btn" type="submit">Pretrazi</button>
       </li>
     </ul>
+    
     </form>
   </div>
     
 </nav>
-    
+    </div>
     <div class="row">
     @foreach($proizvodi as $proizvod)
     <div class="col-md-4">
-      <div class="card" style=" width: 100%; display: inline-block; margin: 20px;">
+      <div class="card" style=" width: 100%; display: inline-block;margin-top: 10px;margin-bottom: 10px;">
           @if($proizvod->kolicina == 0)
           <span class="badge badge-pill badge-danger" style="position: absolute; width: 40%;left:-5px;top:-5px;">Nema na stanju</span>
           @endif
@@ -108,5 +114,5 @@
     </div>
     </div>
     
-</body>
+
 @endsection

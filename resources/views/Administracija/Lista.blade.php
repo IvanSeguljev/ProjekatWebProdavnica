@@ -4,6 +4,8 @@
 <body
 
     <div class="col-md-12">
+        <h2>Administracija korisnika</h2>
+        <hr>
     <table id="tabela" class="display">
     <thead>
         <tr>

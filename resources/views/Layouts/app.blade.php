@@ -22,8 +22,9 @@
 
     <!-- Styles -->
      <link href="{{ asset('css/bsdark.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/sredjivanjeHr.css') }}" rel="stylesheet">
 </head>
-<body style="padding-top: 120px;">
+<body style="padding-top: 50px; background-image: url('{{asset('Slike/Wallpaper.jpg')}}');background-repeat: no-repeat;background-attachment: fixed;">
     <div id="app">
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" style="padding: 0;">
             <div class="container">
@@ -97,7 +98,7 @@
             </div>
         </nav>
 
-        <main class="py-4 container">
+    <main class="py-4 container">
             @yield('content')
         </main>
     </div>

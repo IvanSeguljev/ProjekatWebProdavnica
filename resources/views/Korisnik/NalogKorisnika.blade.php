@@ -48,7 +48,7 @@
     </div>
     <br><div class="row">
         <div class="col-md-4">
-        <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card border-light mb-3" style="max-width: 20rem;">
             <div class="card-header">Racuni</div>
             <div class="card-body">
             <h4 class="card-title">Moji racuni</h4>
@@ -66,7 +66,7 @@
 </div>
         @if(Auth::user()->id== $data["user"]->id)
         <div class="col-md-4">
-        <div class="card text-white bg-primary mb-3  " style="max-width: 20rem;">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
              <div class="card-header">Dodaj novac na racun</div>
              <div class="card-body">
                 <h4 class="card-title">Dodaj novac</h4>
@@ -87,7 +87,7 @@
             <hr style="background-color: white"/>
       <div class="row">
         <div class="col-md-4">
-        <div class="card text-white bg-danger mb-3  " style="max-width: 20rem;">
+        <div class="card border-danger mb-3" style="max-width: 20rem;">
             <div class="card-header">Obrisi nalog</div>
             <div class="card-body">
                 <h4 class="card-title">Obrisi korisnicki nalog</h4>
@@ -101,7 +101,7 @@
         </div>
         </div>
             <div class="col-md-4">
-                <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+                <div class="card border-warning mb-3" style="max-width: 20rem;">
                     <div class="card-header">Promeni sifru</div>
                     <div class="card-body">
                         <h4 class="card-title">Promeni sifru</h4>

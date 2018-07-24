@@ -33,7 +33,14 @@
         </div>
         </div>
         <div class="row">
-            <button class="btn btn-primary col-md-3" onclick="printElem('print');">print</button>
+            <button class="btn btn-primary col-md-3"  onclick="printElem('print');"><img style="margin-right: 10px" width="30px" height="30px"  src="{{asset('ikonice/Print.png')}}"/>print</button>
+            <form method="post" action="/Korisnik/Racuni" class="col-md-3" >
+                {{ csrf_field() }}
+                @if(Auth::user()->role == 'Administrator')
+                <input type="hidden" value="{{$data['user']->id}}" name="id"/>
+                @endif
+                <button type="submit " class="btn btn-danger"  style="height: 100%; width: 100%">Nazad</button>
+                </form>
         </div>
             
             

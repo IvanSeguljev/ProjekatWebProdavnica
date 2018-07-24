@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<body>
+
    @if(session()->has('uspeh'))
    <div class="alert alert-dismissible alert-success">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -32,7 +32,7 @@
     <div class="row">
     @foreach($proizvodi as $proizvod)
     <div class="col-md-3">
-      <div class="card" style=" width: 100%; display: inline-block; margin: 20px;">
+      <div class="card" style=" width: 100%; display: inline-block; margin-top: 20px;">
           @if($proizvod->kolicina == 0)
           <span class="badge badge-pill badge-danger" style="position: absolute; width: 40%;left:-5px;top:-5px;">Nema na stanju</span>
           @endif
@@ -61,12 +61,16 @@
         </div>
     @endforeach
     @if(!$proizvodi)
+    
+    <div class="col-md-12 text-center">
     <h1>Vasa korpa je prazna</h1>
+    </div>
+    
     @endif
        </div>
         @if($proizvodi)
-<div><p>Ukupan iznos za placanje: {{$ukupnaCena}} dinara</p></div>
+        <div style="margin-top: 30px;"><p>Ukupan iznos za placanje: {{$ukupnaCena}} dinara</p></div>
 @endif
     </div>
-</body>
+
 @endsection
