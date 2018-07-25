@@ -16,8 +16,10 @@ class CreateRacunsTable extends Migration
         Schema::create('racuns', function (Blueprint $table) {
             $table->increments('id');
             $table->double('uKupanIznos');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->index('user_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
         });
     }
 

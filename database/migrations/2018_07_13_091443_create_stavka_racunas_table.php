@@ -15,11 +15,14 @@ class CreateStavkaRacunasTable extends Migration
     {
         Schema::create('stavka_racunas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('racun_id');
+            $table->integer('racun_id')->unsigned();
+            $table->index('racun_id');
             $table->double('iznos');
             $table->string('nazivProizvoda');
             $table->integer('kolicina');
+            $table->integer('proizvod_id');
             $table->timestamps();
+            $table->foreign('racun_id')->references('id')->on('racuns')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -18,10 +18,12 @@ class CreateProizvodsTable extends Migration
             $table->string('slika');
             $table->string('naziv');
             $table->string('opis');
-            $table->integer('kategorija_id');
+            $table->integer('kategorija_id')->unsigned();
+            $table->index('kategorija_id');
             $table->integer('kolicina');
             $table->double('cenaPoKomadu');
             $table->timestamps();
+             $table->foreign('kategorija_id')->references('id')->on('kategorijas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -17,8 +17,10 @@ class CreateTransakcijasTable extends Migration
             $table->increments('id');
             $table->double('iznos');
             $table->string('komentar');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->index('user_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

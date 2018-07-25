@@ -15,10 +15,15 @@ class CreateKorpasTable extends Migration
     {
         Schema::create('korpas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('proizvod_id');
+            
+            $table->integer('user_id')->unsigned();
+            $table->integer('proizvod_id')->unsigned();
             $table->integer('kolicina');
+            $table->index('user_id');
+            $table->index('proizvod_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('proizvod_id')->references('id')->on('proizvods')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
