@@ -153,4 +153,20 @@ class AdministracijaController extends Controller
         $proizvod = Proizvod::Find($req->id);
         return view('Administracija.PrikaziProizvod')->with('proizvod',$proizvod);
     }
+    Public function  Promote(Request $req)
+    {
+        $user = User::find($req->id);
+        if($user->role == 'Korisnik')
+        {
+            $user->role = 'Administrator';
+        }
+        else
+        {
+            $user->role = 'Korisnik';
+        }
+        $user->save();
+        $users = User::where('id','!=', Auth::user()->id);
+        return redirect()->back()->with('users',$users);
+        
+    }
 }

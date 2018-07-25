@@ -23,6 +23,7 @@ Route::get('/Administracija/Korisnici', 'AdministracijaController@ListaKorisnika
 Route::post('/Administracija/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
 Route::get('/Administracija/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
 Route::get('/Administracija/Roba', ['uses'=>'AdministracijaController@AdministracijaRobe','as'=>'AdministracijaRobe']);
+Route::post('/Administracija/Promote', 'AdministracijaController@Promote');
 
 //administracija/kategorija routes
 Route::get('/Administracija/DodajKategoriju', ['uses'=>'AdministracijaController@DodajKategoriju','as'=>'DodajKategoriju']);

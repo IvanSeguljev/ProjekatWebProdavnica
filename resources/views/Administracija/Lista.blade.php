@@ -27,20 +27,37 @@
                 
                 <div class="row">
                    
-                    <div class="col-md-6">
+                    <div class="col-md-4">
             <form method="get" action="{{ action('AdministracijaController@NalogKorisnika') }}">
                     {{ csrf_field() }}
                     <input type="hidden" value="{{$user->id}}" name="id"/>
-                    <button style="width: 100%" type="submit" class="btn btn-primary" >NalogKorisnika<img style="margin-left: 5%" width="30px" height="30px"  src="{{asset('ikonice/Details.png')}}"/></button>
+                    <button title="Pogledaj nalog" style="background-color: transparent;" type="submit" class="btn btn-primary" ><span><img  width="25px" height="25px"  src="{{asset('ikonice/Details.png')}}"/></span></button>
                 </form>
                     </div>
-                     <div class="col-md-6">
+                     <div class="col-md-4">
                 <form method="post" action="{{ action('AdministracijaController@BrisanjeKorisnika') }}">
                     {{ csrf_field() }}
                     <input type="hidden" value="{{$user->id}}" name="id"/>
-                    <button style="width: 100%" type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')">Obrisi<img style="margin-left: 5%" width="30px" height="30px"  src="{{asset('ikonice/Delete.png')}}"/></button>
+                    <button title="Obrisi" style="background-color: transparent;" type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')"><img  width="25px" height="25px"  src="{{asset('ikonice/Delete.png')}}"/></button>
                 </form>
                     </div>
+                    @if($user->role=='Administrator')
+                    <div class="col-md-4">
+                <form method="post" action="/Administracija/Promote">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$user->id}}" name="id"/>
+                    <button title="Demote" style="background-color: transparent;" type="submit" class="btn btn-light" onclick="return confirm('jeste li sigurni da ovog ovog korisnika zelite da postavite na ulogu korisnika?')"><img  width="25px" height="25px"  src="{{asset('ikonice/Demote.png')}}"/></button>
+                </form>
+                    </div>
+                    @else
+                    <div class="col-md-4">
+                <form method="post" action="/Administracija/Promote">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$user->id}}" name="id"/>
+                    <button title="Promote" style="background-color: transparent;"  type="submit" class="btn btn-light" onclick="return confirm('jeste li sigurni da zelite da postavite ovog korisnika za administratora?')"><img  width="25px" height="25px"  src="{{asset('ikonice/Promote.png')}}"/></button>
+                </form>
+                    </div>
+                    @endif
                  </div>
             </td>
         </tr>
