@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Kategorija;
 class ProizvodiController extends Controller
 {
+    
+     public function __construct()
+    {
+        
+        $this->middleware('auth');
+    }
+    
 public function Prikazi(Request $req)
 {
     $proizvodi = Proizvod::where('id','>',0);

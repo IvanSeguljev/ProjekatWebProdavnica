@@ -17,6 +17,12 @@ use App\Rules\ValidatePassword;
 
 class KorisnikController extends Controller
 {
+    public function __construct()
+    {
+        
+        $this->middleware('auth');
+    }
+    
     public function NalogKorisnika()
     {
         $user = User::Find(Auth::user()->id);

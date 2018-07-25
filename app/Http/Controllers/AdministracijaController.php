@@ -11,6 +11,29 @@ use Illuminate\Support\Facades\Storage;
 
 class AdministracijaController extends Controller
 {
+    public function __construct()
+    {
+        
+       $this->middleware(function ($request, $next) {
+            $user = Auth::user();
+            if($user)
+            {
+                if($user->role=='Administrator')
+                {
+                    return $next($request);
+                }
+                else
+                {
+                     return redirect('/');
+                }
+            }
+            else
+            {
+                return redirect('/');
+            }
+        });
+       
+    }
     public function ListaKorisnika()
     {
         $users = User::all()->except(Auth::user()->id);
