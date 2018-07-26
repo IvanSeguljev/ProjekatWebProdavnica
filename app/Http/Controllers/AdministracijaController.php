@@ -29,7 +29,7 @@ class AdministracijaController extends Controller
             }
             else
             {
-                return redirect('/');
+                return redirect('/login');
             }
         });
        

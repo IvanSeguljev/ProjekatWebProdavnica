@@ -3,18 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Proizvod/Prikazi.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/app/Http/Controllers/HomeController.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/app/Http/Controllers/ProizvodiController.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Administracija/PrikaziProizvod.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/PromeniSifru.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_13_084947_create_korpas_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_13_091143_create_racuns_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_10_104207_create_transakcijas_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_13_091443_create_stavka_racunas_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_13_083848_create_kategorijas_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/app/Http/Controllers/AdministracijaController.php</file>
             <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Administracija/Lista.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/public/ikonice/Edit.png</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Pocetne/Index.blade.php</file>
-            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/resources/views/Korisnik/PrikazRacuna.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2014_10_12_000000_create_users_table.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/migrations/2018_07_13_084119_create_proizvods_table.php</file>
             <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/ProjekatWebProdavnica/database/seeds/DatabaseSeeder.php</file>
         </group>
     </open-files>
 </project-private>

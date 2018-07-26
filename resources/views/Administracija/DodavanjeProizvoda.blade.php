@@ -13,7 +13,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4 col-form-label text-md-right"><label>Opis Proizvoda</label></div>
-                            <div class="col-md-6"><textarea maxlength="254" rows="6" type="text" name="opis" class=" form-control" placeholder="Unesite opis kategorije(max 254 slova)" id="opis" required="true"></textarea></div>
+                            <div class="col-md-6"><textarea maxlength="190" rows="6" type="text" name="opis" class=" form-control" placeholder="Unesite opis proizvoda(max 190 slova)" id="opis" required="true"></textarea></div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4 col-form-label text-md-right"><label>Kategorija proizvoda</label></div>
