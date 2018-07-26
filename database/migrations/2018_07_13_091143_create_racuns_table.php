@@ -15,7 +15,7 @@ class CreateRacunsTable extends Migration
     {
         Schema::create('racuns', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('uKupanIznos');
+            $table->double('ukupanIznos');
             $table->integer('user_id')->unsigned()->nullable();
             $table->index('user_id');
             $table->timestamps();

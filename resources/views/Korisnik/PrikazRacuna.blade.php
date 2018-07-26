@@ -16,7 +16,7 @@
         <li class="list-group-item d-flex justify-content-between align-items-center">
             {{$stavka->nazivProizvoda}}
             
-            <div>Kolicina: {{$stavka->kolicina}}</div>
+            <div>Kolicina: {{$stavka->kolicina}}, Iznos stavke:{{$stavka->iznos}}</div>
         </li>
         @endforeach
     </ul>
